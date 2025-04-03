@@ -1,0 +1,14 @@
+{
+  "name": "veshbhusha",
+  "version": "1.0.0",
+  "description": "by jivan",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "jivan",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^11.6.0"
+  }
+}
