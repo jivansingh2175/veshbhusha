@@ -1,0 +1,36 @@
+.cart-page,
+.wishlist-page {
+  padding: 2rem;
+}
+
+.cart-item,
+.wishlist-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+/* 🖼 Fix image size */
+.cart-item img,
+.wishlist-item img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info button {
+  margin-right: 8px;
+}
+
+.quantity-controls button {
+  margin: 0 5px;
+  padding: 4px 10px;
+}

@@ -1,0 +1,190 @@
+/* ProductDetails.css */
+
+.details-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.details-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.details-img {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.details-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.details-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #2b2b2b;
+}
+
+.details-subtitle {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rating-bar {
+  font-size: 1rem;
+  color: #f39c12;
+  margin-bottom: 1rem;
+}
+
+.price-box {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  margin: 1rem 0;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #aaa;
+  margin-left: 0.5rem;
+}
+
+.off {
+  color: #e67e22;
+  margin-left: 0.5rem;
+}
+
+.tax-info {
+  font-size: 0.85rem;
+  color: green;
+  margin-bottom: 1rem;
+}
+
+.size-section {
+  margin: 1.5rem 0;
+}
+
+.size-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.size-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.size-btn {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: rgb(94, 205, 236);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.size-btn.selected {
+  border: 2px solid #111;
+  background-color: #cde2ea;
+}
+
+.size-btn.disabled {
+  color: #aaa;
+  border-color: #eee;
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+.stock {
+  font-size: 0.75rem;
+  color: #ff5722;
+  margin-top: 4px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.add-btn,
+.wishlist-btn {
+  padding: 0.9rem 2rem;
+  color: black;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 0.95rem;
+}
+
+.add-btn {
+  background-color: #eb118d;
+  color: white;
+  border: none;
+}
+
+.add-btn:hover {
+  background-color: #6d0859;
+}
+
+.wishlist-btn {
+  border: 1px solid #ccc;
+  background-color: #de4242;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wishlist-btn:hover {
+  background-color: #a21a1a;
+}
+
+.recommended-section {
+  margin-top: 3rem;
+}
+
+.recommended-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.recommended-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.recommended-card {
+  width: 160px;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  transition: 0.3s ease;
+}
+
+.recommended-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.recommended-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}

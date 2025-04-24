@@ -1,0 +1,56 @@
+.men-category {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.men-category h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.category-item {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-decoration: none;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.category-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.7rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 2px 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
