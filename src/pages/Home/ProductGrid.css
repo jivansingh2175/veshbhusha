@@ -68,3 +68,12 @@
   margin-top: -2rem;
   margin-bottom: 2rem;
 }
+
+.feature-head h2{
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}

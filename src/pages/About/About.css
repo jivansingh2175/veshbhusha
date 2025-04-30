@@ -4,73 +4,122 @@ body {
   margin: 0;
   padding: 0;
   color: #222;
-  background: #fdfdfd;
+  background: linear-gradient(135deg, #f5f7fa, #e4ecf1);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
+/* Headings */
 h1, h2 {
-  color: #1a1a1a;
+  font-weight: 600;
+  color: #222;
 }
 
 a {
   text-decoration: none;
-  transition: 0.3s ease;
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #000;
+  color: #111;
 }
 
 /* Wrapper */
 .about-wrapper {
   max-width: 1200px;
-  margin: auto;
-  padding: 2rem 1rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 /* Header */
 .about-header {
   text-align: center;
-  padding-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .about-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  position: relative;
+  display: inline-block;
   margin-bottom: 0.5rem;
 }
 
+.about-header h1::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background: #0078ff;
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  border-radius: 10px;
+}
+
 .about-header p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #555;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Main Sections */
 .about-main {
-  display: grid;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* spacing between each section */
 }
 
 .about-section {
   background: #fff;
-  padding: 1.5rem;
+  padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #0078ff;
+}
+
+.about-section:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .about-section h2 {
-  margin-bottom: 0.75rem;
-  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #1d3c64;
+  position: relative;
+}
+
+.about-section h2::before {
+  content: "➤";
+  margin-right: 0.5rem;
+  color: #0078ff;
 }
 
 .about-section ul {
-  padding-left: 1.2rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .about-section ul li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #444;
 }
 
-/* Footer */
+.about-section ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-size: 1rem;
+}
+
+/* Footer - UNCHANGED */
 footer {
   background: #111;
   color: #eee;

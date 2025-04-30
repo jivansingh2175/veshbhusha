@@ -11,16 +11,18 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Listen to auth state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
 
+        // Reference to the user document in Firestore
         const userRef = doc(db, "users", currentUser.uid);
         const userSnap = await getDoc(userRef);
 
+        // If user doesn't exist, create it
         if (!userSnap.exists()) {
-          // ✅ Create Firestore user doc if it doesn't exist
           await setDoc(userRef, {
             email: currentUser.email || "",
             name: currentUser.displayName || "",
@@ -30,26 +32,28 @@ export const AuthProvider = ({ children }) => {
           });
         }
       } else {
-        setUser(null);
+        setUser(null);  // User is logged out, clear the state
       }
 
       setLoading(false);
     });
 
+    // Cleanup the listener on unmount
     return () => unsubscribe();
   }, []);
 
-  // ✅ Logout function
+  // Logout function
   const logout = async () => {
     await signOut(auth);
-    setUser(null); // ensures state is cleared
+    setUser(null);  // Ensure user state is cleared after logging out
   };
 
   return (
     <AuthContext.Provider value={{ user, loading, logout }}>
-      {!loading && children}
+      {!loading && children}  {/* Render children once loading is complete */}
     </AuthContext.Provider>
   );
 };
 
+// Custom hook to access the Auth context
 export const useAuth = () => useContext(AuthContext);

@@ -5,6 +5,7 @@ import ProductGrid from "./ProductGrid";
 import { Button } from "antd";
 import { useNavigate } from 'react-router-dom';
 import MenCategory from "../MenCategeory/MenCategory";
+import Testimonials from "../About/testimonials";
 
 
 
@@ -61,6 +62,7 @@ const Hero = () => {
 
       {/* Featured Products */}
         <ProductGrid />
+        <Testimonials/>
       {/* Footer */}
       <footer className="footer">
         <div className="container">

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { db } from "../../firebase/firebaseConfig"; // Ensure correct path to firebaseConfig
+import { db } from "../../firebase/firebaseConfig";
 import { toast } from "react-toastify";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore"; // Import the right methods from Firebase
-import "./ContactForm.css"; // Link to the new CSS file for styling
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import "./ContactForm.css";
 
 const ContactForm = () => {
   const [contactDetails, setContactDetails] = useState({
     name: "",
     email: "",
+    reason: "",
     message: "",
   });
 
@@ -25,7 +26,9 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (!contactDetails.name || !contactDetails.email || !contactDetails.message) {
+    const { name, email, reason, message } = contactDetails;
+
+    if (!name || !email || !reason || !message) {
       toast.error("Please fill in all the fields.");
       setLoading(false);
       return;
@@ -33,14 +36,12 @@ const ContactForm = () => {
 
     try {
       await addDoc(collection(db, "contacts"), {
-        name: contactDetails.name,
-        email: contactDetails.email,
-        message: contactDetails.message,
+        ...contactDetails,
         timestamp: serverTimestamp(),
       });
 
       toast.success("Your message has been sent!");
-      setContactDetails({ name: "", email: "", message: "" });
+      setContactDetails({ name: "", email: "", reason: "", message: "" });
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
       console.error(error);
@@ -76,6 +77,23 @@ const ContactForm = () => {
             className="form-input"
             required
           />
+        </div>
+        <div className="form-group">
+          <label htmlFor="reason" className="form-label">Reason for Contact</label>
+          <select
+            id="reason"
+            name="reason"
+            value={contactDetails.reason}
+            onChange={handleChange}
+            className="form-input"
+            required
+          >
+            <option value="">Select a reason</option>
+            <option value="Order Inquiry">Order Inquiry</option>
+            <option value="Return or Refund">Return or Refund</option>
+            <option value="Product Issue">Product Issue</option>
+            <option value="General Query">General Query</option>
+          </select>
         </div>
         <div className="form-group">
           <label htmlFor="message" className="form-label">Message</label>
